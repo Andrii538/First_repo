@@ -98,10 +98,10 @@ Given a non-empty array of integers, return the result of multiplying the values
 
 # print(grow([1.4, 2.4, 3, 4]))
 
-text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-words = []
-start = 0
+# text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+# alphabet = 'abcdefghijklmnopqrstuvwxyz'
+# words = []
+# start = 0
 
 # for indx, char in enumerate(text):
 #     if not char.lower() in alphabet:
@@ -122,4 +122,359 @@ start = 0
 
 # print(words)
 
+# def email_slice():
+#     mail = input('Input your email address: ')
+#     mail_at = mail.index('@')
+#     user_name = mail[:mail_at]
+#     domain_name = mail[mail_at+1::]
+#     return print(f'For {mail} \nyour user name: {user_name} \nyour domain: {domain_name}')
+# email_slice()
 
+# pool = 1000
+# quantity = int(input("Enter the number of mailings: "))
+# try:
+#     chunk = pool / quantity
+#     chunk = round(chunk)
+#     print(chunk)
+# except ZeroDivisionError:
+#     print('Divide by zero completed!')
+
+# def discount_price(price, discount):
+#     def apply_discount():
+#         nonlocal price, discount
+#         price = price * (1 - discount)
+#         return price
+#     apply_discount()
+#     return price
+# print(discount_price(40, 0.05))
+
+# def get_fullname(first_name, last_name, middle_name=''):
+#     if middle_name == '':
+#         name = f"{first_name} {last_name}"
+#     else:
+#         name = f'{first_name} {middle_name} {last_name}'
+#     return name
+# print(get_fullname('firstname', 'lastname', 'middlename'))
+
+# def format_string(string: str, length: int) -> str:
+#     if len(string) >= length:
+#         new_string = string
+#     else:
+#         space_left = (length - len(string)) // 2
+#         space_right = (length - len(string)) - space_left
+#         new_string = " " * space_left + string + space_right * " "
+#     return new_string
+# print(format_string('aaaaaaaaaaaaaaaaac', 12))
+
+# def factorial(n):
+#     if n < 2:
+#         return 1
+#     else:
+#         return n * factorial(n - 1)
+
+# def number_of_groups(n, k):
+#     sum_num_list = factorial(n) / ((factorial(n - k) * factorial(k)))
+#     return int(sum_num_list)
+# print(number_of_groups(50, 7))
+
+# from random import randint # Імпортуємо функцію, для генерування числа
+
+# def predict_number(number): # створюємо функцію, яка приймає число на вхід для діапазону чисел
+#     count = 0 # лічильник для спроб вгадування числа
+#     goal = randint(0, number) # генеруємо число від 0 до аргументу функції
+
+#     while True: # вічний
+#         user_input = int(input(f"Guess the number form 0 to {number}: ")) # користувач вводить число з підказкою у вигляді діапазону
+#         count += 1 # При кожному ведені лічилдьник збільшується на один
+
+#         if user_input > goal: # Якщо число введегне є більше за генероване повідомляємо користувача
+#             print("Smaller")
+#         elif user_input < goal: #  Якщо число введегне є менше за генероване повідомляємо користувача
+#             print("Larger")
+#         else: #  Якщо число введегне рівне генерованому повідомляємо користувача і перериваємо цикл
+#             print(f"You win! Number of attempts {count}")
+#             break
+
+# predict_number(10)
+
+
+# def fibonachi_iter(n):
+#     a, b = 0, 1
+#     for _ in range(n):
+#         a, b = b, a + b
+#     return a
+
+# print(fibonachi_iter(101))  # Виведе 573147844013817084101
+
+# def revers_seq(n: int) -> list:
+#     my_list = []
+#     while n >= 1:
+#         my_list.append(n)
+#         n = n -1
+#     return my_list
+# print(backward_count(5))
+
+# def backward_count(n: int) -> list:
+#     return list(range(n, 0, -1))
+
+# def square_every_digit(num: int) -> int:
+#     str_num = str(num)
+#     sentences = ''
+#     for i in str_num:
+#         n = int(i) ** 2
+#         sentences += str(n)
+#     return int(sentences)
+# print(square_every_digit(9119))
+# print(type(square_every_digit(9119)))
+
+# def square_every_digit(num: int) -> int:
+#     return int("".join(str(int(digit) ** 2) for digit in str(num)))
+
+""" 
+You live in the city of Cartesia where all roads are laid out in a perfect grid. 
+You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. 
+The city provides its citizens with a Walk Generating App on their phones -- every time you press the button 
+it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). 
+You always walk only a single block for each letter (direction) and you know it takes you one minute 
+to traverse one city block, so create a function that will return true if the walk the app gives you will take you 
+exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. 
+Return false otherwise.
+
+Note: you will always receive a valid array containing a random assortment of direction letters 
+('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
+ """
+# def ten_min_walk(walk: list) -> bool:
+#     if len(walk) != 10:
+#         return False
+#     north_south = walk.count('n') - walk.count('s')  # Має бути 0
+#     east_west = walk.count('e') - walk.count('w')    # Має бути 0
+
+#     return north_south == 0 and east_west == 0
+# print(ten_min_walk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']))  # True
+# print(ten_min_walk(['n', 'n', 'n', 's', 's', 's', 'e', 'w', 'e', 'w']))  # True
+# print(ten_min_walk(['n', 's', 'n', 's']))  # False (тільки 4 кроки)
+# print(ten_min_walk(['n', 'n', 'n', 'n', 's', 's', 's', 's', 'e', 'w']))  # False
+
+# def isValidWalk(walk):
+#     return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
+
+# def check(x_o: list) -> bool:
+#     count_x = 0
+#     count_o = 0
+#     for char in x_o:
+#         if char == 'x':
+#             count_x += 1
+#         elif char == 'o':
+#             count_o += 1
+#         elif char == 'X':
+#             count_x += 1
+#         elif char == 'O':
+#             count_o += 1
+#     return count_x == count_o
+
+# def xo(x_o: list) -> bool:
+#     x = 0
+#     o = 0
+#     for char in x_o:
+#         if char == 'x' or char == 'X':
+#             x = x + 1
+#         elif char == 'o' or char == 'O':
+#             o = o + 1
+#     return x == o
+
+# def xo(s):
+#     s = s.lower()
+#     return s.count('x') == s.count('o')
+
+# print(xo("zpzpzpp"))
+
+# def validate_pin(pin: str) -> bool:
+#     return pin.isdigit() and (len(pin) == 4 or len(pin) == 6)
+# print(validate_pin('-12345'))
+
+# import datetime
+# now = datetime.datetime.now()
+# print(now)
+
+# from datetime import datetime
+
+# current_datetime = datetime.now()
+
+# print(current_datetime.year)
+# print(current_datetime.month)
+# print(current_datetime.day)
+# print(current_datetime.hour)
+# print(current_datetime.minute)
+# print(current_datetime.second)
+# print(current_datetime.microsecond)
+# print(current_datetime.tzinfo)
+# print(current_datetime.weekday())
+# print(current_datetime.isoweekday())
+# print(current_datetime.isoformat())
+# print(current_datetime.strftime('%d-%m-%Y %H:%M:%S'))
+# print(current_datetime.strftime('%d-%m-%Y %I:%M:%S %p'))
+# print(current_datetime.strftime('%d-%m-%Y %H:%M:%S %p'))
+
+# print(current_datetime.date())
+# print(current_datetime.time())
+
+# import datetime
+
+# # Створення об'єктів date і time
+# date_part = datetime.date(2023, 12, 14)
+# time_part = datetime.time(12, 30, 15)
+
+# # Комбінування дати і часу в один об'єкт datetime
+# combined_datetime = datetime.datetime.combine(date_part, time_part)
+# print(combined_datetime)  # Виведе "2023-12-14 12:30:15"
+
+# # Розбір дати і часу з об'єкта datetime
+# date = combined_datetime.date()
+# time = combined_datetime.time()
+
+# from datetime import datetime, timezone, timedelta
+
+# utc_time = datetime.now(timezone.utc)
+
+# # Створення часової зони для Східного часового поясу (UTC-5)
+# eastern_time = utc_time.astimezone(timezone(timedelta(hours=-5)))
+# # Перетворює час UTC в час Східного часового поясу
+# print(eastern_time)  
+
+# from datetime import datetime, timezone, timedelta
+
+# # Припустимо, місцевий час належить до часової зони UTC+2
+# local_timezone = timezone(timedelta(hours=2))
+# local_time = datetime(year=2023, month=3, day=14, hour=12, minute=30, second=0, tzinfo=local_timezone)
+
+# # Конвертація локального часу в UTC
+# utc_time = local_time.astimezone(timezone.utc)
+# print(utc_time)  # Виведе час в UTC
+
+# import time
+
+# text = "Початок паузи"
+# for char in text:
+#     print(char, end='', flush=True)  # Виводимо символ без нового рядка
+#     time.sleep(0.4 if char == ' ' else 0.1)  # 0.3 сек для пробілу, 0.1 сек для інших символів
+
+# width = 5
+# for num in range(18):
+#     print(f'{num:^10} {num**2:^10} {num**3:^10}')
+
+# if __name__ == '__main__': # Для воконання коду в поточному файлі
+
+"""
+Write a function, persistence, that takes in a positive parameter num and returns 
+its multiplicative persistence, which is the number of times you must multiply the digits in num 
+until you reach a single digit.
+For example (Input --> Output):
+
+39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit, there are 3 multiplications)
+999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2, there are 4 multiplications)
+4 --> 0 (because 4 is already a one-digit number, there is no multiplication)
+"""
+# def persistence(num: int) -> int:
+#     count = 0  # Лічильник кроків
+    
+#     while num >= 10:  # Поки число не однозначне
+#         product = 1
+#         for digit in str(num):  
+#             product *= int(digit)  # Перемножуємо цифри
+#         num = product  # Оновлюємо num
+#         count += 1  # Збільшуємо лічильник
+    
+#     return count
+
+# print(persistence(999))  # 4
+# print(persistence(39))   # 3
+# print(persistence(4))    # 0
+
+
+# def high(x: str) -> str:
+#     words = x.split()
+#     words_dict = {}
+#     for word in words:
+#         word_score = sum(ord(char) - ord('a') + 1 for char in word)  # Вираховуємо суму "балів" слова
+#         words_dict[word] = word_score
+
+#     return max(words_dict, key=words_dict.get) (\w+)([A-Z]\w+)
+
+# users = [
+#     {"name": "Bill Gates", "birthday": "1955.3.25"},
+#     {"name": "Steve Jobs", "birthday": "1955.3.21"},
+#     {"name": "Jinny Lee", "birthday": "1956.3.22"},
+#     {"name": "Sarah Lee", "birthday": "1957.3.23"},
+#     {"name": "Jonny Lee", "birthday": "1958.3.22"},
+#     {"name": "John Doe", "birthday": "1985.01.23"},
+#     {"name": "Jane Smith", "birthday": "1990.01.27"}
+# ]
+"""
+[{'name': 'Bill Gates', 'birthday': datetime.date(1955, 3, 25)}, 
+{'name': 'Steve Jobs', 'birthday': datetime.date(1955, 3, 21)}, 
+{'name': 'Jinny Lee', 'birthday': datetime.date(1956, 3, 22)}, 
+{'name': 'Sarah Lee', 'birthday': datetime.date(1957, 3, 23)}, 
+{'name': 'Jonny Lee', 'birthday': datetime.date(1958, 3, 22)}, 
+{'name': 'John Doe', 'birthday': datetime.date(1985, 1, 23)},
+ {'name': 'Jane Smith', 'birthday': datetime.date(1990, 1, 27)}
+ ]
+
+
+Напишіть функцію prepare_user_list, яка приймає список імен користувачів
+ та їх дат народження у рядковому форматі, і повертає список словників у форматі 
+ {"name": <name>, "birthday": <birthday>}, де <birthday> - це об'єкт datetime.date.
+"""
+from datetime import datetime,  timedelta, date
+
+def find_next_weekday(start_date: datetime, weekday: int) -> datetime:
+    days_ahead = weekday - start_date.weekday()
+    if days_ahead <= 0:
+        days_ahead += 7
+    return start_date + timedelta(days=days_ahead)
+
+def string_to_date(date_string):
+    return datetime.strptime(date_string, "%Y.%m.%d").date()
+
+def date_to_string(date):
+    return date.strftime("%Y.%m.%d")
+
+def prepare_user_list(user_data):
+    prepared_list = []
+    for user in user_data:
+        prepared_list.append({"name": user["name"], "birthday": string_to_date(user["birthday"])})
+    return prepared_list
+
+
+def get_upcoming_birthdays(users, days=7):
+    upcoming_birthdays = []
+    today = date.today()
+    for user in users:
+        birthday_this_year = user["birthday"].replace(year=today.year)
+        if birthday_this_year < today:
+            birthday_this_year = birthday_this_year.replace(year=today.year + 1)
+        if 0 <= (birthday_this_year - today).days <= days:
+            birthday_this_year = adjust_for_weekend(birthday_this_year)
+            congratulation_date_str = date_to_string(birthday_this_year)
+            upcoming_birthdays.append({"name": user["name"], "congratulation_date": congratulation_date_str})
+    return upcoming_birthdays
+
+def adjust_for_weekend(birthday):
+    if birthday.weekday() >= 5:
+        birthday = find_next_weekday(birthday, 0)
+        
+    return birthday
+
+
+
+
+users = [
+    {"name": "Bill Gates", "birthday": "1955.3.25"},
+    {"name": "Steve Jobs", "birthday": "1955.3.21"},
+    {"name": "Jinny Lee", "birthday": "1956.3.22"},
+    {"name": "Sarah Lee", "birthday": "1957.3.23"},
+    {"name": "Jonny Lee", "birthday": "1958.3.22"},
+    {"name": "John Doe", "birthday": "1985.01.23"},
+    {"name": "Jane Smith", "birthday": "1990.01.27"}
+]
+
+print(get_upcoming_birthdays(prepare_user_list(users)))
