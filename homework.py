@@ -37,7 +37,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
     """
     list_of_numbers = []    # Створюємо порожній список в який буде занесено фінальний результат.
     set_of_num = set()      # Створюємо множину, яка забезпечить унікальність чисел.
-    if min < 1 or min >= max or max > 1000 or max - min <= quantity:
+    if min < 1 or min >= max or max > 1000 or max - min + 1 < quantity:
         # Перевіряємо коректність заданих аргументів функції.
         return list_of_numbers      # Якщо якийсь з аргументів задано неправильно, повертаємо порожній список.
     else:
@@ -53,7 +53,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
 
     return list_of_numbers
 
-lottery_numbers = get_numbers_ticket(100, 500, 400)
+lottery_numbers = get_numbers_ticket(100, 500, 401)
 print("Ваші лотерейні числа:", lottery_numbers)
 
 
