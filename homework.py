@@ -53,7 +53,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
 
     return list_of_numbers
 
-lottery_numbers = get_numbers_ticket(100, 500, 401)
+lottery_numbers = get_numbers_ticket(10, 15, 6)
 print("Ваші лотерейні числа:", lottery_numbers)
 
 
@@ -67,28 +67,28 @@ print("Ваші лотерейні числа:", lottery_numbers)
 
 
 
-# import re
+import re
 
-# def normalize_phone(phone_number: str) -> str:
-#     """
-#     Очищує телефонний номер і повертає стандартизований номер у форматі +380XXXXXXXXX.\n
-#     Аргумент:
-#     phone_number (str): рядок, що містить не стандартизований телефонний номер.\n
-#     Повертає:
-#     str: рядок, що містить очищений і стандартизований телефонний номер.
-#     """
-#     cleaned_num = re.sub(r'[^0-9+]', '', phone_number)  # Видаляємо всі нецифрові символи, крім знака +
+def normalize_phone(phone_number: str) -> str:
+    """
+    Очищує телефонний номер і повертає стандартизований номер у форматі +380XXXXXXXXX.\n
+    Аргумент:
+    phone_number (str): рядок, що містить не стандартизований телефонний номер.\n
+    Повертає:
+    str: рядок, що містить очищений і стандартизований телефонний номер.
+    """
+    cleaned_num = re.sub(r'[^0-9+]', '', phone_number)  # Видаляємо всі нецифрові символи, крім знака +
     
-#     if cleaned_num[:2] == '38':     # Перевіряємо, чи номер починається з 38
-#         return '+' + cleaned_num    # Додаємо + і виводимо результат
-#     elif cleaned_num[:3] == '+38':  # Перевіряємо, чи номер починається з +38
-#         return cleaned_num          # Виводимо результат
-#     elif cleaned_num[0] == '0':     # Перевіряємо, чи номер починається з 0
-#         return '+38' + cleaned_num  # Додаємо +38 і виводимо результат
-#     elif cleaned_num[0] == '8':    # Перевіряємо, чи номер починається з 8
-#         return '+3' + cleaned_num   # Додаємо +38 і виводимо результат
-#     else:
-#         return "Некоректний номер"  # Якщо формат зовсім неправильний
+    if cleaned_num[:2] == '38':     # Перевіряємо, чи номер починається з 38
+        return '+' + cleaned_num    # Додаємо + і виводимо результат
+    elif cleaned_num[:3] == '+38':  # Перевіряємо, чи номер починається з +38
+        return cleaned_num          # Виводимо результат
+    elif cleaned_num[0] == '0':     # Перевіряємо, чи номер починається з 0
+        return '+38' + cleaned_num  # Додаємо +38 і виводимо результат
+    elif cleaned_num[0] == '8':    # Перевіряємо, чи номер починається з 8
+        return '+3' + cleaned_num   # Додаємо +38 і виводимо результат
+    else:
+        return "Некоректний номер"  # Якщо формат зовсім неправильний
 
 
 

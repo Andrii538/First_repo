@@ -98,8 +98,14 @@ def get_upcoming_birthdays(users: list, days: int = 7) -> list:
 
 if __name__ == "__main__":
     users = [
-        {"name": "Андрій", "birthday": "1995.03.01"},
-        {"name": "Марія", "birthday": "2000.02.28"},
-        {"name": "Іван", "birthday": "1998.02.26"}
+        {"name": "Андрій", "birthday": "1996.04.01"},
+        {"name": "Марія", "birthday": "2000.03.20"},
+        {"name": "Іван", "birthday": "1998.02.25"}
     ]
-    print(get_upcoming_birthdays(prepare_user_list(users), 20))
+    import json
+
+    with open('birthdays.txt', 'w', encoding='utf-8') as fh:
+        json.dump(get_upcoming_birthdays(prepare_user_list(users), 30), fh, indent=4, ensure_ascii=False)
+
+    print(get_upcoming_birthdays(prepare_user_list(users), 30))
+    #from get_upcoming_birthdays import get_upcoming_birthdays, prepare_user_list
