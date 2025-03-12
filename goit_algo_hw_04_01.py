@@ -18,11 +18,9 @@
 from pathlib import Path
 
 def total_salary(path):
+    
     try:
-        user_data = Path(path)
-        
-        with open(user_data, 'r', encoding="utf-8") as file:
-            print(type(file))
+        with open(path, 'r', encoding="utf-8") as file:
             total = 0
             line_number = 0  # Змінна для відстеження номера рядка
             try:
@@ -33,11 +31,14 @@ def total_salary(path):
                 average = total / line_number
             except IndexError:
                 return f'Помилка при обробці рядка - {line_number}'
-        return tuple((total, round(average)))
+        return (total, round(average))
+    
     except FileNotFoundError:
-        return 'Файл не знайдено' 
+        return 'Файл не знайдено'
+    
     except ZeroDivisionError:
-        return 'Файл порожній або не містить даних про заробітню плату' 
+        return 'Файл порожній або не містить даних про заробітню плату'
+    
     except ValueError:
         return 'Не правильний формат вхідних даних' 
 

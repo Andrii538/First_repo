@@ -48,7 +48,19 @@
 # import sys
 # print(sys.modules["os"].__file__)
 
-from goit_algo_hw_04_01 import total_salary
-# print(total_salary('goit_algo_hw_04_01_data.txt'))
-total, average = total_salary("path/to/salary_file.txt")
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+# from goit_algo_hw_04_01 import total_salary
+# # print(total_salary('goit_algo_hw_04_01_data.txt'))
+# total, average = total_salary("path/to/salary_file.txt")
+# print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+
+
+# contacts = {'Jone': '0635346696', 'Bob': '0564556896'}
+
+def show_phone(name):
+    contacts = {'Jone': '0635346696', 'Bob': '0564556896'}
+    if name in contacts:
+        return contacts[name]
+    else:
+        return "Name not found."
+    
+print(show_phone('Bob'))
